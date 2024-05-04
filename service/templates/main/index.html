@@ -1,0 +1,50 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <section class="mb-3">
+        <h1>Космическое агентство</h1>
+        <p>Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
+    </section>
+    <section class="mb-3">
+        <h2>Наши достижения</h2>
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="icon1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Спейс шаттлы — пилотируемые корабли</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="icon2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Лучшее телескопическое оборудование</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="icon3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Целимся на Луну и Марс</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="icon4.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Золотая медаль по научным исследованиям</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "slider/slider.html" %}
+
+{% endblock content %}

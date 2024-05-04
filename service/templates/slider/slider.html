@@ -1,0 +1,17 @@
+{% load slider_tags %}
+    <!-- Основной слайдер -->
+    <div class="slider">
+        <div class="slider-for">
+            {% for slider in sliders %}
+            <div><img src="{{ slider.image.url }}" alt="{{ slider.title }}" style="width:100%;"></div>
+            {% endfor %}
+        </div>
+    
+        <div class="slider-nav">
+            {% for slider in sliders %}
+            <div><img src="{{ slider.image|thumbnail_url:'slider_thumb' }}" alt="{{ slider.title }}"></div>
+            {% comment %} <div><img src="{{ slider.image.thumbnail_url }}" alt="{{ slider.title }}" style="width:100%;"></div> {% endcomment %}
+            {% endfor %}
+        </div>
+    </div>
+    

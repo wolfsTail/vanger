@@ -6,4 +6,3 @@ from users.models import CustomUser
 
 
 admin.site.register(CustomUser, UserAdmin)
-admin.site.unregister(Group)

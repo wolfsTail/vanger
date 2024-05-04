@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'main',
     'slider',
     # third party apps
+    'filer',
+    'easy_thumbnails',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +130,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -134,3 +140,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'slider_thumb': {'size': (165, 165), 'crop': True},
+    },
+}
