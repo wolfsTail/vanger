@@ -81,16 +81,12 @@
   margin-top: 30px;
 }
 
-.slider-nav .slick-slide {
-  margin: 0 10px;
-}
-
 .slider-for img {
   z-index: 1;
   width: 750px;
   height: 420px;
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 40px;
   margin: 0 auto;
   @media (max-width: 440px) {
     width: 340px;
