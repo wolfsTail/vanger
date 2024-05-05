@@ -3,48 +3,55 @@
 
 {% block content %}
 
-    <section class="mb-3">
-        <h1>Космическое агентство</h1>
-        <p>Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
-    </section>
-    <section class="mb-3">
-        <h2>Наши достижения</h2>
-        <div class="row">
-            <div class="col-sm-6 col-lg-3 mb-3">
-                <div class="card">
-                    <img src="icon1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Спейс шаттлы — пилотируемые корабли</p>
+    <div class="agency">
+        <div class="container">
+            <!-- Заголовок и описание -->
+            <div class="agency_header">
+                <div class="row">
+                    <div class="col-sm-8 offset-sm-2 text-center">
+                        <h1 class="header montserrat-bold">Космическое агенство</h1>
+                        <p class="descr montserrat-regular">
+                            Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-3">
-                <div class="card">
-                    <img src="icon2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Лучшее телескопическое оборудование</p>
+            <!-- Преимущества -->
+            <div id="advantages" class="advantages">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">                        
+                        <div class="row align-items-center">
+                           <div class="col-6 text-center">
+                                <img src="{% static 'img/first_screen/shuttle_ico.png' %}" alt="shuttle">
+                                <p class="adv_descr montserrat-semibold">Спейс шаттлы - пилотируемые корабли</p>
+                            </div>
+                        
+                            <div class="col-6 text-center">
+                                <img src="{% static 'img/first_screen/telescope_ico.png' %}" alt="telescope">
+                                <p class="adv_descr montserrat-semibold">Лучшее телескопическое оборудование</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row align-items-center gy-4">
+                            <div class="col-6 text-center p-3">
+                                <img src="{% static 'img/first_screen/planets_ico.png' %}" alt="planets">
+                                <p class="adv_descr montserrat-semibold">Целимся на Луну и Марс</p>
+                            </div>
+                            <div class="col-6 text-center p-3">
+                                <img src="{% static 'img/first_screen/medal_ico.png' %}" alt="medal">
+                                <p class="adv_descr montserrat-semibold">Золотая медаль по научным исследованиям</p>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-3">
-                <div class="card">
-                    <img src="icon3.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Целимся на Луну и Марс</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-3">
-                <div class="card">
-                    <img src="icon4.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Золотая медаль по научным исследованиям</p>
+                    <div class="col-sm-5 offset-sm-1">
+                        <img src="{% static 'img/first_screen/sky_img.jpg' %}" class="img-fluid" alt="sky">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+    
     {% include "slider/slider.html" %}
 
 {% endblock content %}

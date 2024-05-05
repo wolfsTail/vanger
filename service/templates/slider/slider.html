@@ -1,17 +1,29 @@
 {% load slider_tags %}
+{% load static %}
+
     <!-- Основной слайдер -->
-    <div class="slider">
-        <div class="slider-for">
-            {% for slider in sliders %}
-            <div><img src="{{ slider.image.url }}" alt="{{ slider.title }}" style="width:100%;"></div>
-            {% endfor %}
-        </div>
-    
-        <div class="slider-nav">
-            {% for slider in sliders %}
-            <div><img src="{{ slider.image|thumbnail_url:'slider_thumb' }}" alt="{{ slider.title }}"></div>
-            {% comment %} <div><img src="{{ slider.image.thumbnail_url }}" alt="{{ slider.title }}" style="width:100%;"></div> {% endcomment %}
-            {% endfor %}
-        </div>
+    <div id="photos" class="photos">
+        <div class="container">
+          <h2 class="photos_subheader montserrat-bold text-center">Фотографии</h2>
+          <div class="slider">
+            <div class="slider-for">
+                {% for slide in slides %}
+                <div>
+                    <a href="{{ slide.image.url }}" data-fancybox="gallery" data-caption="{{ slide.title }}">
+                        <img src="{{ slide.image.url }}" alt="{{ slide.title }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            
+            
+        
+            <div class="slider-nav">
+                {% for slide in slides %}
+                    <div><img src="{{ slide.image|thumbnail_url:'slider_thumb' }}" alt="{{ slide.title }}"></div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>        
     </div>
     
