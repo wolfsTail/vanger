@@ -32,7 +32,7 @@ docker-compose up --build
 ```
 
 ### Инициализация проекта
-Выполните миграции и создайте суперпользователя
+Выполните миграции и создайте суперпользователя, выполнив команды в новом окне терминала текущей директории
 ```bash
 docker-compose exec web-app python manage.py migrate
 docker-compose exec web-app python manage.py createsuperuser
