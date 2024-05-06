@@ -14,13 +14,13 @@
                     </a>
                 </div>
                 {% endfor %}
-            </div>
-            
-            
+            </div>          
         
             <div class="slider-nav">
                 {% for slide in slides %}
                     <div><img src="{{ slide.image|thumbnail_url:'slider_thumb' }}" alt="{{ slide.title }}"></div>
+                    <button class="slick-prev">Previous</button>
+                    <button class="slick-next">Next</button>
                 {% endfor %}
             </div>
           </div>

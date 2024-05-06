@@ -14,7 +14,7 @@ class Slider(models.Model):
         CustomUser, on_delete=models.CASCADE, verbose_name='Владелец', editable=False
         )
     order = models.PositiveIntegerField(
-        default=0, editable=False, db_index=True
+        default=0, editable=False, db_index=True, verbose_name='Порядок сортировки'
         )
 
     def __str__(self):

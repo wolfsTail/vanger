@@ -7,8 +7,8 @@ from slider.models import Slider
 
 
 class SliderAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display = ('image_tag', 'title', 'owner', 'order')
-    list_display_links = ('title',)
+    list_display = ('order', 'title', 'owner', 'image_tag')
+    list_display_links = ('title', 'image_tag')
     list_select_related = ('owner',)
     readonly_fields = ('image_tag', 'owner')
 
@@ -17,7 +17,7 @@ class SliderAdmin(SortableAdminMixin, admin.ModelAdmin):
             return format_html('<img src="{}" style="height:50px;" />', obj.image.url)
         return "-"
     image_tag.short_description = 'Изображение'
-
+    
     def save_model(self, request, obj, form, change):
         if not obj.pk:
             obj.owner = request.user
