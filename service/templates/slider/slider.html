@@ -2,6 +2,7 @@
 {% load static %}
 
     <!-- Основной слайдер -->
+    {% if slides %}
     <div id="photos" class="photos">
         <div class="container">
           <h2 class="photos_subheader montserrat-bold text-center">Фотографии</h2>
@@ -26,4 +27,11 @@
           </div>
         </div>        
     </div>
+    {% else %}
+    <div id="photos" class="photos">
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+            <h2>Загрузите фотографии в слайдер, воспользовавшись админ-панелью!</h2>
+        </div>
+    </div>
+    {% endif %}
     
