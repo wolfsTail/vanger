@@ -1,3 +1,5 @@
+from easy_thumbnails.files import get_thumbnailer
+
 from django.contrib import admin
 from django.utils.html import format_html
 
@@ -14,10 +16,14 @@ class SliderAdmin(SortableAdminMixin, admin.ModelAdmin):
 
     def image_tag(self, obj):
         if obj.image:
-            return format_html('<img src="{}" style="height:50px;" />', obj.image.url)
+            thumbnailer = get_thumbnailer(obj.image)
+            thumbnail_options = {'size': (75, 75), 'crop': True}
+            thumbnail_url = thumbnailer.get_thumbnail(thumbnail_options).url
+            return format_html('<img src="{}"/>', thumbnail_url)
         return "-"
-    image_tag.short_description = 'Изображение'
     
+    image_tag.short_description = 'Изображение'
+
     def save_model(self, request, obj, form, change):
         if not obj.pk:
             obj.owner = request.user
